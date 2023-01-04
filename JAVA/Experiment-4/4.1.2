@@ -1,0 +1,29 @@
+class Parent 
+{
+    private void display() 
+    {
+        System.out.println("Private class is envoked.");
+    }
+
+    public void show() 
+    {
+        display();
+    }
+}
+
+class child extends Parent 
+{
+    void print() 
+    {
+        super.show();
+    }
+}
+
+public class Exp4_1 
+{
+    public static void main(String[] args) 
+    {
+        child obj = new child();
+        obj.print();
+    }
+}
