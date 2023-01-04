@@ -1,0 +1,61 @@
+class Worker 
+{
+    String name;
+
+    Worker(String n) 
+    {
+        name = n;
+    }
+
+    void show() 
+    {
+        System.out.println("Employee name : " + name);
+    }
+}
+
+class DailyWorker extends Worker 
+{
+    int pay;
+
+    DailyWorker(String n, int r) 
+    {
+        super(n);
+        pay = r;
+    }
+
+    void ComPay(int h) 
+    {
+        super.show();
+        System.out.println("Salary : " + pay * h);
+    }
+}
+
+class SalariedWorker extends Worker 
+{
+    int pay;
+
+    SalariedWorker(String n, int r) 
+    {
+        super(n);
+        pay = r;
+    }
+
+    int hour = 40;
+
+    void ComPay() 
+    {
+        super.show();
+        System.out.println("Salary : " + pay * hour);
+    }
+}
+
+public class Exp4_3 
+{
+    public static void main(String args[]) 
+    {
+        DailyWorker d = new DailyWorker("Arjun", 100);
+        SalariedWorker s = new SalariedWorker("Unnati", 150);
+        d.ComPay(45);
+        s.ComPay();
+    }
+}
