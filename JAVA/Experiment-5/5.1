@@ -1,0 +1,28 @@
+import java.util.*;
+
+interface Test 
+{
+    void square(int a);
+}
+
+class arithmetic implements Test 
+{
+    public void square(int b) 
+    {
+        System.out.println("Square is " + (b * b) + ".");
+    }
+}
+
+public class ToTestInt 
+{
+    public static void main(String[] args) 
+    {
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int n = Sc.nextInt();
+        arithmetic obj = new arithmetic();
+        Test t;
+        t = obj;
+        t.square(n);
+    }
+}
