@@ -1,0 +1,41 @@
+import java.util.*;
+
+interface A 
+{
+    void meth1();
+
+    void meth2();
+}
+
+class MyClass implements A 
+{
+    Scanner Sc = new Scanner(System.in);
+
+    public void meth1() 
+    {
+        System.out.println("Enter two numbers: ");
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        System.out.println("Product of numbers= " + (a * b));
+    }
+
+    public void meth2() 
+    {
+        System.out.println("Enter two numbers: ");
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        System.out.println("Division of numbers= " + (a / b));
+    }
+}
+
+public class Exp5_2 
+{
+    public static void main(String[] args) 
+    {
+        MyClass obj = new MyClass();
+        A call;
+        call = obj;
+        call.meth1();
+        call.meth2();
+    }
+}
