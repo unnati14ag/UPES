@@ -1,0 +1,44 @@
+import java.util.*;
+
+interface Area 
+{
+    static final double pi = 3.14;
+
+    double compute(double r);
+}
+
+class AreaOfCircle implements Area 
+{
+    public double compute(double r) 
+    {
+        return pi * r * r;
+    }
+}
+
+class AreaOfSquare implements Area 
+{
+    public double compute(double r) 
+    {
+        return r * r;
+    }
+
+}
+
+public class Exp5_3 
+{
+    public static void main(String[] args) 
+    {
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("Enter the length of radius: ");
+        double a = Sc.nextDouble();
+        AreaOfCircle c = new AreaOfCircle();
+        Area ar;
+        ar = c;
+        System.out.println("Area of circle= " + ar.compute(a));
+        System.out.println("Enter the length of side: ");
+        double b = Sc.nextDouble();
+        AreaOfSquare s = new AreaOfSquare();
+        ar = s;
+        System.out.println("Area of square= " + ar.compute(b));
+    }
+}
