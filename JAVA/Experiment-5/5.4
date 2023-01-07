@@ -1,0 +1,45 @@
+import java.util.*;
+
+interface Methods 
+{
+    void div(int a, int b);
+
+    void mod(int c, int d);
+}
+
+class Calculate implements Methods 
+{
+    int a1, b1, c1, d1;
+
+    public void div(int a, int b) 
+    {
+        a1 = a;
+        b1 = b;
+        System.out.println("Quotient= " + (a1 / b1));
+    }
+
+    public void mod(int c, int d) 
+    {
+        c1 = c;
+        d1 = d;
+        System.out.println("Remainder= " + (c1 % d1));
+    }
+}
+
+public class Exp5_4 
+{
+    public static void main(String[] args) 
+    {
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("Enter the numbers: ");
+        int x = Sc.nextInt();
+        int y = Sc.nextInt();
+        Calculate m = new Calculate();
+        m.mod(x, y);
+        System.out.println("Enter the numbers: ");
+        int u = Sc.nextInt();
+        int v = Sc.nextInt();
+        m.div(u, v);
+
+    }
+}
