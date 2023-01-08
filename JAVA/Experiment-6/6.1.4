@@ -1,0 +1,20 @@
+package pack2;
+import pack1.*;
+import pack1.subpack.*;
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Enter two numbers: ");
+		Scanner Sc= new Scanner(System.in);
+		int u= Sc.nextInt();
+		int v= Sc.nextInt();
+		Addition a= new Addition();
+		a.add(u,v);
+		Subtraction s= new Subtraction();
+		s.sub(u,v);
+		Multiplication m = new Multiplication();
+		m.mul(u,v);
+	}
+}
