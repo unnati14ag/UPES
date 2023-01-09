@@ -1,0 +1,56 @@
+import java.util.*;
+
+class NoSufficientFundException extends Exception {
+    public NoSufficientFundException(String str) {
+        super(str);
+    }
+}
+
+public class Account {
+    int balance;
+    int withdraw;
+
+    Account(int a) {
+        balance = a;
+        System.out.println("Total balance: " + balance);
+    }
+
+    public void validate(int w) throws NoSufficientFundException {
+        if (w > balance) {
+            throw new NoSufficientFundException("You cannot withdraw money.");
+        } else {
+            System.out.println("Money has been withdrwan.");
+            System.out.println("Total balance: " + (balance - w));
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner Sc = new Scanner(System.in);
+        System.out.print("Total balane: ");
+        int bal = Sc.nextInt();
+        int ch;
+        Account obj = new Account(bal);
+        System.out.println("1.Deposit\n2.Withdraw");
+        ch = Sc.nextInt();
+        switch (ch) {
+            case 1: {
+                System.out.print("Enter the amount to be deposited:");
+                int d = Sc.nextInt();
+                System.out.println("Total balane: " + (d + bal));
+            }
+                break;
+            case 2: {
+                System.out.print("Enter the amount to be withdrawn:");
+                int w = Sc.nextInt();
+                try {
+                    obj.validate(w);
+                } catch (NoSufficientFundException ex) {
+                    System.out.println(ex);
+                }
+            }
+                break;
+            default:
+                System.out.println("Enter a Valid Choice.");
+        }
+    }
+}
