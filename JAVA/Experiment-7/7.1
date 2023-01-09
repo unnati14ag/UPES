@@ -1,0 +1,120 @@
+import java.util.*;
+
+public class Exceptions {
+    public void arithmeticExp() {
+        Scanner Sc = new Scanner(System.in);
+        System.out.print("Enter the value of a and b:");
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c = 0;
+        try {
+            c = a / b;
+            System.out.println("Result = " + c);
+        } catch (ArithmeticException e) {
+            System.out.println("Can't divide a number by 0");
+        }
+    }
+
+    public void nullPointerExp() {
+        try {
+            String a = null;
+            System.out.println(a.charAt(0));
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException");
+        }
+    }
+
+    public void arrayIndexOutOfBoundsExp() {
+        Scanner Sc = new Scanner(System.in);
+        System.out.print("Enter the range of array:");
+        int a = Sc.nextInt();
+        int arr[] = new int[a];
+        try {
+            arr[a + 1] = 9;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index is Out Of Bounds");
+        }
+    }
+
+    public void stringIndexOutOfBoundsExp() {
+        Scanner Sc = new Scanner(System.in);
+        String str;
+        System.out.println("Enter a string:");
+        str = Sc.nextLine();
+        try {
+            int l = str.length();
+            char c = str.charAt(l);
+            System.out.println(c);
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void numberFormatExp() {
+        Scanner Sc = new Scanner(System.in);
+        String str;
+        System.out.println("Enter a string:");
+        str = Sc.nextLine();
+        try {
+            int n = Integer.parseInt(str);
+            System.out.println(n);
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void inputMismatchExp() {
+        Scanner Sc = new Scanner(System.in);
+        try {
+            System.out.println("Enter the value:");
+            int a = Sc.nextInt();
+            System.out.println((a * a));
+        } catch (InputMismatchException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public static void main(String[] args) {
+        Exceptions obj = new Exceptions();
+        Scanner Sc = new Scanner(System.in);
+        char choice;
+        do {
+            choice = '\u0000';
+            System.out.println(
+                    " (1) ArithmeticException\n (2) NullPointerException\n (3) ArrayIndexOutOfBoundsException\n (4) StringIndexOutOfBoundsException\n (5) ClassNotFoundException\n (6) IllegalArgumentException\n (7) NumberFormatException\n (8) CloneNotSupportedException\n (9) MethodNotFoundException\n (10) InputMismatchException\n (11)Exit");
+            System.out.println("Enter the choice: ");
+            int ch = Sc.nextInt();
+            switch (ch) {
+                case 1: {
+                    obj.arithmeticExp();
+                }
+                    break;
+                case 2: {
+                    obj.nullPointerExp();
+                }
+                    break;
+                case 3: {
+                    obj.arrayIndexOutOfBoundsExp();
+                }
+                    break;
+                case 4: {
+                    obj.stringIndexOutOfBoundsExp();
+                }
+                    break;
+                case 5: {
+                    obj.numberFormatExp();
+                }
+                    break;
+                case 6: {
+                    obj.inputMismatchExp();
+                }
+                    break;
+                default: {
+                    System.out.println("Enter the valid choice.");
+                }
+            }
+            System.out.println("Do you want to continue?(y|n)");
+            choice = Sc.next().charAt(0);
+        } while (choice == 'y' || choice == 'Y');
+    }
+}
