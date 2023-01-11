@@ -1,0 +1,38 @@
+package pack3;
+import pack1.*;
+import pack2.*;
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) 
+    {
+        Scanner Sc=new Scanner(System.in);
+        int a,b;
+        System.out.println("Enter the value of a and b");
+        a=Sc.nextInt();
+        b=Sc.nextInt();
+        Arithmetic obj1=new Arithmetic();
+        Relational obj2=new Relational();
+        Logical obj3=new Logical();
+        Bitwise obj4=new Bitwise();
+        obj1.add(a,b);
+        obj1.sub(a,b);
+        obj1.mul(a,b);
+        obj1.div(a,b);
+        obj2.equal(a,b);
+        obj2.not_equal(a,b);
+        obj2.less_than(a,b);
+        obj2.greater_than(a,b);
+        obj2.lt_equal(a,b);
+        obj2.gt_equal(a,b);
+        obj3.and(a,b);
+        obj3.or(a,b);
+        obj3.not(a,b);
+        obj4.bit_and(a,b);
+        obj4.bit_or(a,b);
+        obj4.xor(a,b);
+        obj4.bit_not(a,b);
+        obj4.l_shift(a,b);
+        obj4.r_shift(a,b);
+    }
+}
