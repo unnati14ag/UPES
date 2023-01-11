@@ -1,0 +1,15 @@
+package pack2;
+
+public class Logical {
+	public void and(int x, int y) {
+		System.out.println("x==y && y==x is" + (x == y && y == x));
+	}
+
+	public void or(int x, int y) {
+		System.out.println("x>y || y>x is " + (x > y || y > x));
+	}
+
+	public void not(int x, int y) {
+		System.out.println("!(x<5) && !(x<7) is " + ((!(x < 5)) && (!(y < 7))));
+	}
+}
