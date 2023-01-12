@@ -1,0 +1,19 @@
+public class ExpProp {
+    static void nullpoint() {
+        String x = null;
+        System.out.println(x.charAt(0));
+    }
+
+    static void np() {
+        nullpoint();
+    }
+
+    public static void main(String[] args) {
+        try {
+            np();
+        } catch (NullPointerException e) {
+            System.out.println("NullPointer Exception\n" + e);
+            System.out.println("Demonstration of Exception Propogation.");
+        }
+    }
+}
